@@ -47,33 +47,33 @@ const polygonMesh = new Mesh(polygon, material);
 mat4.translate(polygonMesh.modelMatrix, polygonMesh.modelMatrix, [3, 0, -6]);
 scene.addMesh(polygonMesh);
 
-const objGeometry = new ObjGeometry(gl, objString);
-const objMesh = new Mesh(objGeometry, material);
-scene.addMesh(objMesh);
+// const objGeometry = new ObjGeometry(gl, objString);
+// const objMesh = new Mesh(objGeometry, material);
+// scene.addMesh(objMesh);
 
-// const cubePositions = [
-// 	vec3.fromValues(0, 0, 0),
-// 	vec3.fromValues(2, 5, -15),
-// 	vec3.fromValues(-1.5, 2.2, -2.5),
-// 	vec3.fromValues(-3.8, -2, -12.3),
-// 	vec3.fromValues(2.4, -0.4, -3.5),
-// 	vec3.fromValues(-1.7, 3, -7.5),
-// 	vec3.fromValues(1.3, -2, -2.5),
-// 	vec3.fromValues(1.5, 2, -2.5),
-// 	vec3.fromValues(1.5, 0.2, -1.5),
-// 	vec3.fromValues(-1.3, 1, -1.5),
-// ];
+const cubePositions = [
+	vec3.fromValues(0, 0, 0),
+	vec3.fromValues(2, 5, -15),
+	vec3.fromValues(-1.5, 2.2, -2.5),
+	vec3.fromValues(-3.8, -2, -12.3),
+	vec3.fromValues(2.4, -0.4, -3.5),
+	vec3.fromValues(-1.7, 3, -7.5),
+	vec3.fromValues(1.3, -2, -2.5),
+	vec3.fromValues(1.5, 2, -2.5),
+	vec3.fromValues(1.5, 0.2, -1.5),
+	vec3.fromValues(-1.3, 1, -1.5),
+];
 
-// cubePositions.forEach((pos) => {
-// 	const cube = new CubeGeometry(gl);
-// 	const cubeMesh = new Mesh(cube, material);
-// 	mat4.translate(cubeMesh.modelMatrix, cubeMesh.modelMatrix, pos);
-// 	// const angle = 20 * i;
-// 	// mat4.rotateX(cubeMesh.modelMatrix, cubeMesh.modelMatrix, degToRad(angle));
-// 	// mat4.rotateY(cubeMesh.modelMatrix, cubeMesh.modelMatrix, degToRad(angle));
-// 	// mat4.rotateZ(cubeMesh.modelMatrix, cubeMesh.modelMatrix, degToRad(angle));
-// 	scene.addMesh(cubeMesh);
-// });
+cubePositions.forEach((pos) => {
+	const cube = new CubeGeometry(gl);
+	const cubeMesh = new Mesh(cube, material);
+	mat4.translate(cubeMesh.modelMatrix, cubeMesh.modelMatrix, pos);
+	// const angle = 20 * i;
+	// mat4.rotateX(cubeMesh.modelMatrix, cubeMesh.modelMatrix, degToRad(angle));
+	// mat4.rotateY(cubeMesh.modelMatrix, cubeMesh.modelMatrix, degToRad(angle));
+	// mat4.rotateZ(cubeMesh.modelMatrix, cubeMesh.modelMatrix, degToRad(angle));
+	scene.addMesh(cubeMesh);
+});
 
 const draw = (lastFrame: number, thisFrame: number) => {
 	deltaTime = thisFrame - lastFrame;

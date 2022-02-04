@@ -1,0 +1,18 @@
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+canvas {
+	width: 100%;
+	height: 100%;
+}
+
+#fps {
+	color: #75f914;
+	font-family: monospace;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
